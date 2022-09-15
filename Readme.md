@@ -29,11 +29,22 @@ npm install mysql2
 
 ## Despligue en el servidor
 ~~~
+tzselect
+date
+timedatectl list-timezones
+sudo timedatectl set-timezone America/Guatemala
+~~~
+
+~~~
+sudo apt-get update
+sudo apt-get install git
+sudo apt-get install npm
+sudo npm install pm2 -g
 git clone "repositorio"
-cd Conferencia_MIA_2s2022/Server
+cd Conferencia_MIA_2s2022/Server/src
+nano credenciales.js     #luego de copiar las credenciales, para guardar Ctrol+o, Ctrol+x
 npm install
-npm install pm2
-cd src
-pm2 start index.js pruebas
+pm2 start index.js --name pruebas
 pm2 list
 ~~~
+
